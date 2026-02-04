@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import GitHubLogin from "@/components/ui/github-button";
+import GitHubLogin from "@/components/github-button";
 
 export default function LoginPage() {
   return (
@@ -14,9 +14,7 @@ export default function LoginPage() {
       <Card className="w-87.5">
         <CardHeader className="text-center">
           <CardTitle>Welcome back</CardTitle>
-          <CardDescription>
-            Login to access your documents
-          </CardDescription>
+          <CardDescription>Login to access your documents</CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
           <GitHubLogin />
