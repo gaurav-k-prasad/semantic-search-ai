@@ -12,7 +12,6 @@ export default auth((request) => {
     return NextResponse.redirect(new URL("/login", request.url));
   }
 
-  // TODO: Validate the token
   if (isLoggedIn && isLoginPage) {
     return NextResponse.redirect(new URL("/home", request.url));
   }

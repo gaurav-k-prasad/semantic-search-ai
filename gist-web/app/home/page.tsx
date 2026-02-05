@@ -1,3 +1,4 @@
+import { auth } from "@/auth";
 import { AppSidebar } from "@/components/app-sidebar";
 import {
   Breadcrumb,
@@ -14,40 +15,21 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 
-export default function Page() {
+export default async function Page() {
+  const user = (await auth())?.user;
+
   return (
     <SidebarProvider>
       <AppSidebar
         data={{
-          user: { avatar: "", email: "test@gmail", name: "gaurav" },
+          user: {
+            avatar: user?.image || "/user.jpg",
+            email: user?.email || "",
+            name: user?.name || "Anonymous",
+          },
           root: {
-            files: [],
-            folders: [
-              {
-                files: ["Test"],
-                folders: [
-                  {
-                    files: ["Nest"],
-                    folders: [
-                      {
-                        files: ["Test"],
-                        folders: [
-                          {
-                            files: ["Nest"],
-                            folders: [],
-                            name: "nested_folder",
-                          },
-                        ],
-                        name: "folder",
-                      },
-                    ],
-                    name: "nested_folder",
-                  },
-                ],
-                name: "folder",
-              },
-            ],
             name: "root",
+            path: "/",
           },
         }}
       />

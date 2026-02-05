@@ -6,7 +6,7 @@ import {
   SidebarGroupLabel,
   SidebarMenu,
 } from "@/components/ui/sidebar";
-import { FolderStructure } from "@/types/folder";
+import { FolderStructure } from "@/types/folder-files";
 
 export function NavMain({ items }: { items: FolderStructure }) {
   return (

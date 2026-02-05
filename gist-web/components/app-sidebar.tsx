@@ -11,16 +11,12 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import { FolderStructure } from "@/types/folder";
+import { FolderStructure } from "@/types/folder-files";
+import { UserDetails } from "@/types/user";
 
 interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
   data: {
-    user: {
-      name: string;
-      email: string;
-      avatar: string;
-    };
-
+    user: UserDetails;
     root: FolderStructure;
   };
 }
